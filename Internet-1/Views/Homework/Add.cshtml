@@ -1,0 +1,55 @@
+﻿@using Internet_1.ViewModels
+
+@{
+    Layout = "_LayoutAdmin"; ;
+}
+@model HomeworkModel
+@section CardHeader{
+
+}
+<h2> Ekle</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+
+        <form asp-controller="Homework" asp-action="Add" method="post">
+
+                <div class="col-lg-12">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="mb-1000">
+                <label asp-for="StudentNumber"></label>
+                <input asp-for="StudentNumber" class="form-control" />
+                <span class="text-danger" asp-validation-for="StudentNumber"></span>
+            </div>
+            <div class="mb-24">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span class="text-danger" asp-validation-for="Description"></span>
+            </div>
+
+                <div class="mb-24">
+                    <label asp-for="LessonName"></label>
+                    <textarea asp-for="LessonName" class="form-control" rows="3"></textarea>
+                    <span class="text-danger" asp-validation-for="LessonName"></span>
+                </div>
+            <div class="mb-24">
+
+                <input asp-for="IsActive" class="form-check-input" />
+                <label asp-for="IsActive"></label>
+                <span class="text-danger" asp-validation-for="IsActive"></span>
+            </div>
+            <div class="mb-24">
+                <input type="submit" value="Kaydet" class="btn btn-primary btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+    
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
